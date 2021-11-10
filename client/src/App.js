@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+// import { useParams } from "react-router-dom";
+
 import { Route, Switch, Redirect } from "react-router-dom";
 import MovieList from './components/MovieList';
 import Movie from './components/Movie';
@@ -15,6 +17,8 @@ const App = (props) => {
   const [movies, setMovies] = useState([]);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 
+  // const { id } = useParams()
+
   useEffect(()=>{
     axios.get('http://localhost:5003/api/movies')
       .then(res => {
@@ -25,7 +29,9 @@ const App = (props) => {
       });
   }, []);
 
+  // how are we filtering?
   const deleteMovie = (id)=> {
+    setMovies(movies.filter(movie=> movie.id !== Number(id)))
   }
 
   const addToFavorites = (movie) => {
@@ -49,7 +55,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/movies/:id">
-              <Movie/>
+              <Movie deleteMovie={deleteMovie}/>
             </Route>
 
             <Route path="/movies">
