@@ -29,19 +29,19 @@ CRUD applications are the foundation of most web applications. Being able to man
 #### Editing a Movie
 > *Let's start by walking through the process of adding the routing, component and service calls need for resource updating*
 
-* [ ] First, we need to be able to navigate to the edit movie component. In App.js, add in the `<EditMovieForm> `component to the supplied edit route.
+* [ x ] First, we need to be able to navigate to the edit movie component. In App.js, add in the `<EditMovieForm> `component to the supplied edit route.
 
-* [ ] Next, we need to grab the id being passed into the component through the url. Use the `useParams` hook to get the id value.
+* [ x ] Next, we need to grab the id being passed into the component through the url. Use the `useParams` hook to get the id value.
 
-* [ ] We need to be able to load in the current movie's attributes into our local form state. When `EditMovieForm` mount, retrieve our current id's movie from the api and save the data returned to local state.
+* [ x ] We need to be able to load in the current movie's attributes into our local form state. When `EditMovieForm` mount, retrieve our current id's movie from the api and save the data returned to local state.
 
-* [ ] At this point, nothing happens when the edit form is submitted. Add in the api call needed to update the server with our updated movie data.
+* [ x ] At this point, nothing happens when the edit form is submitted. Add in the api call needed to update the server with our updated movie data.
 
-* [ ] Don't forget to make sure that your server data and your local state are in sync! Make any changes the edit route needed to give the edit form access to App's `setMovies` method.
+* [ x ] Don't forget to make sure that your server data and your local state are in sync! Make any changes the edit route needed to give the edit form access to App's `setMovies` method.
 
-* [ ] Now that we have access to `setMovies`, made sure the updated list of movies is saved to our global state.
+* [ x ] Now that we have access to `setMovies`, made sure the updated list of movies is saved to our global state.
 
-* [ ] Redirect the user to the currently edited movie's individual info page.
+* [ x ] Redirect the user to the currently edited movie's individual info page.
 
 #### Deleting a Movie
 > *You added in a CRUD feature! Good job! Now let's get deleted squared away...*
@@ -77,7 +77,7 @@ CRUD applications are the foundation of most web applications. Being able to man
 
 ### Resource: API documentation 
 
-#### GET `http://localhost:5000/api/movies`
+#### GET `http://localhost:5003/api/movies`
 - Retrieves all the Movies with the following formatting:
 ```
 [{
@@ -89,17 +89,17 @@ CRUD applications are the foundation of most web applications. Being able to man
   description: : "A successful lawman's plans to retire anonymously in Tombstone, Arizona are disrupted by the kind of outlaws he was famous for eliminating."
 }]
 ```
-#### GET `http://localhost:5000/api/movies`
+#### GET `http://localhost:5003/api/movies`
 - Retrieves all movies on the server.
 
-#### GET `http://localhost:5000/api/movies/:id`
+#### GET `http://localhost:5003/api/movies/:id`
 - Retrieves a movie with the passed value as id.
 
-#### POST `http://localhost:5000/api/movies`
+#### POST `http://localhost:5003/api/movies`
 - Adds the movie passed in through body to the server movies list. Returns updated movies list.
 
-#### PUT `http://localhost:5000/api/movies/:id`
+#### PUT `http://localhost:5003/api/movies/:id`
 - Replaced the movie with the passed in id with data passed in through body. Returns update movies list.
 
-#### DELETE `http://localhost:5000/api/movies/:id`
+#### DELETE `http://localhost:5003/api/movies/:id`
 - Removed movie with the passed in id. Returns the deleted movie's id.
